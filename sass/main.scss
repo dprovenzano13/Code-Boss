@@ -10,18 +10,46 @@
     max-width: 1600px;
     margin: 0 auto;
     padding: 0px 128px;
+
+    @media (max-width: 1024px){
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+section {
+    h2 {
+        text-align: center;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        font-size: 36px;
+        color: #313131;
+    }
 }
 
 .button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+
     display: inline-block;
     color: white;
+    font-size: 20px;
     font-weight: 700;
     background-color: #FF9FDB;
     padding: 12px 16px;
     border-radius: 8px;
     text-decoration: none;
     text-transform: uppercase;
+    cursor: pointer;
 
+
+
+}
+
+img {
+    max-width: 100%;
 }
 
 header {
@@ -37,7 +65,8 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 32px 128px;
+        padding-top: 32px;
+        padding-bottom: 32px;
     }
     h2 {
         color: inherit;
@@ -53,6 +82,10 @@ header {
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(4, auto);
+
+        @media (max-width: 767px) {
+            display: none;
+        }
 
         a {
             color: inherit;
@@ -98,6 +131,10 @@ main {
                 span {
                     color: #FF9FDB;
                 }
+
+                @media (max-width: 767px) {
+                    font-size: 36px;
+                }
             }
             h3 {
                 font-size: 36px;
@@ -113,6 +150,146 @@ main {
         .container {
             padding-top: 64px;
             padding-bottom: 64px;
+
+            .servicesGrid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+
+                @media (max-width: 1024px){
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .service {
+                    background-color: white;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
+
+                    .imgBox {
+                        display: block;
+                        width: 100%;
+                        border-bottom: 5px solid #FF9FDB;
+
+                        .img {
+                            display: block;
+                            width: 100%;
+                            height: 128px;
+                            object-fit: cover;
+                        }
+                    }
+                    .content {
+                        padding: 16px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .projects {
+        padding-top: 64px;
+        padding-bottom: 64px;
+
+        .projectsGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+
+            @media (max-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .project {
+                background-image: url(/assets/images/project-img.jpg);
+                border-radius: 16px;
+                overflow: hidden;
+
+                .content {
+                    opacity: 0;
+                    color: white;
+                    padding: 16px;
+                    background-color: rgba(64,39,68,0.8);
+                    transition: 0.4s;
+
+                    h3 {
+                        font-size: 32px;
+                        margin-bottom: 16px;
+
+                        @media (max-width: 1024px) {
+                            font-size: 28px;
+                        }
+                    }
+                    p{
+                        font-size: 18px;
+                        margin-bottom: 16px;
+                        
+                        @media (max-width: 1024px) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .content {
+                        opacity: 1;
+                    }
+                }
+
+                // &:nth-child(2){
+                //     background-image: url(/assets/images/service-1.jpg);
+                // }
+            }
+        }
+        .center {
+            text-align: center;
+        }
+    }
+    .contact {
+        background-color: #9B75D7;
+
+        .container {
+            padding-top: 64px;
+            padding-bottom: 64px;
+            h2 {
+                color: white;
+            }
+            form {
+                display: block;
+                max-width: 680px;
+                margin: 0 auto;
+
+                .formGrid {
+                    display: grid;
+                    gap: 16px;
+                    grid-template-columns: repeat(2, 1fr);
+                    margin-bottom: 16px;
+
+                    .formElement, .formArea {
+                        appearance: none;
+                        border: none;
+                        outline: none;
+                        background: none;
+
+                        display: block;
+                        width: 100%;
+                        background-color: white;
+                        border-radius: 8px;
+                        padding: 16px;
+                        font-size: 20px;
+
+                        &::placeholder {
+                            color: #AAA;
+                        }
+                    }
+
+                    .formArea {
+                        grid-column: 1/-1;
+                    }
+                }
+                .rightAlign {
+                    text-align: right;
+                }
+            }
         }
     }
     

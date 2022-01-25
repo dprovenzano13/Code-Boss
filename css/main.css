@@ -13,15 +13,42 @@
   padding: 0px 128px;
 }
 
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  font-size: 36px;
+  color: #313131;
+}
+
 .button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  background: none;
   display: inline-block;
   color: white;
+  font-size: 20px;
   font-weight: 700;
   background-color: #FF9FDB;
   padding: 12px 16px;
   border-radius: 8px;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
 }
 
 header {
@@ -43,7 +70,8 @@ header .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 32px 128px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 header h2 {
@@ -63,6 +91,12 @@ header nav {
   gap: 16px;
   -ms-grid-columns: (auto)[4];
       grid-template-columns: repeat(4, auto);
+}
+
+@media (max-width: 767px) {
+  header nav {
+    display: none;
+  }
 }
 
 header nav a {
@@ -113,6 +147,12 @@ main section.banner .container h1 span {
   color: #FF9FDB;
 }
 
+@media (max-width: 767px) {
+  main section.banner .container h1 {
+    font-size: 36px;
+  }
+}
+
 main section.banner .container h3 {
   font-size: 36px;
   font-weight: 400;
@@ -126,5 +166,178 @@ main .services {
 main .services .container {
   padding-top: 64px;
   padding-bottom: 64px;
+}
+
+main .services .container .servicesGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  main .services .container .servicesGrid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+main .services .container .servicesGrid .service {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+main .services .container .servicesGrid .service .imgBox {
+  display: block;
+  width: 100%;
+  border-bottom: 5px solid #FF9FDB;
+}
+
+main .services .container .servicesGrid .service .imgBox .img {
+  display: block;
+  width: 100%;
+  height: 128px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .services .container .servicesGrid .service .content {
+  padding: 16px;
+}
+
+main .projects {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+main .projects .projectsGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  main .projects .projectsGrid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+main .projects .projectsGrid .project {
+  background-image: url(/assets/images/project-img.jpg);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+main .projects .projectsGrid .project .content {
+  opacity: 0;
+  color: white;
+  padding: 16px;
+  background-color: rgba(64, 39, 68, 0.8);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+main .projects .projectsGrid .project .content h3 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  main .projects .projectsGrid .project .content h3 {
+    font-size: 28px;
+  }
+}
+
+main .projects .projectsGrid .project .content p {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  main .projects .projectsGrid .project .content p {
+    font-size: 16px;
+  }
+}
+
+main .projects .projectsGrid .project:hover .content {
+  opacity: 1;
+}
+
+main .projects .center {
+  text-align: center;
+}
+
+main .contact {
+  background-color: #9B75D7;
+}
+
+main .contact .container {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+main .contact .container h2 {
+  color: white;
+}
+
+main .contact .container form {
+  display: block;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+main .contact .container form .formGrid {
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 16px;
+}
+
+main .contact .container form .formGrid .formElement, main .contact .container form .formGrid .formArea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  display: block;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 20px;
+}
+
+main .contact .container form .formGrid .formElement::-webkit-input-placeholder, main .contact .container form .formGrid .formArea::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+main .contact .container form .formGrid .formElement:-ms-input-placeholder, main .contact .container form .formGrid .formArea:-ms-input-placeholder {
+  color: #AAA;
+}
+
+main .contact .container form .formGrid .formElement::-ms-input-placeholder, main .contact .container form .formGrid .formArea::-ms-input-placeholder {
+  color: #AAA;
+}
+
+main .contact .container form .formGrid .formElement::placeholder, main .contact .container form .formGrid .formArea::placeholder {
+  color: #AAA;
+}
+
+main .contact .container form .formGrid .formArea {
+  grid-column: 1/-1;
+}
+
+main .contact .container form .rightAlign {
+  text-align: right;
 }
 /*# sourceMappingURL=main.css.map */
