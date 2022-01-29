@@ -54,6 +54,8 @@ main {
         display: flex;
         align-items: center;
 
-        background-image: url();
+        background-image: url(/assets/mainMe.jpg);
+        background-position: top right;
+        background-size: cover;
     }
 }
