@@ -6,6 +6,13 @@
   font-family: 'Fira Sans', sans-serif;
 }
 
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0px 128px;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -23,8 +30,6 @@ header .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 1600px;
-  margin: 0 auto;
   padding: 32px 128px;
 }
 
@@ -51,5 +56,16 @@ header nav a {
   color: inherit;
   font-size: 20px;
   text-decoration: none;
+}
+
+main section.banner {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url();
 }
 /*# sourceMappingURL=main.css.map */
