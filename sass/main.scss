@@ -8,16 +8,30 @@
 .container {
     width: 100%;
     max-width: 1600px;
-     margin: 0 auto;
+    margin: 0 auto;
     padding: 0px 128px;
 }
 
+.button {
+    display: inline-block;
+    color: white;
+    font-weight: 700;
+    background-color: #FF9FDB;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
 header {
-    // color: white;
+    color: white;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 99;
+    // background-color: #12002F;
 
     .container {
         display: flex;
@@ -50,12 +64,56 @@ header {
 
 main {
     section.banner {
+        color: white;
+        position: relative;
         min-height: 100vh;
         display: flex;
         align-items: center;
 
-        background-image: url(/assets/mainMe.jpg);
+        background-image: url(/assets/images/header.jpg);
         background-position: top right;
         background-size: cover;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background-color: #12002F;
+            opacity: 0.8;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+
+            h1 {
+                font-size: 72px;
+                margin-bottom: 32px;
+
+                span {
+                    color: #FF9FDB;
+                }
+            }
+            h3 {
+                font-size: 36px;
+                font-weight: 400;
+                margin-bottom: 32px;
+            }
+        }
     }
+
+    .services {
+        background-color: #eee;
+
+        .container {
+            padding-top: 64px;
+            padding-bottom: 64px;
+        }
+    }
+    
 }
